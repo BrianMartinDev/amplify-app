@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { withAuthenticator } from 'aws-amplify-react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,6 +11,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <div>
+      <h1>Hello from AWS Amplify</h1>
+    </div>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -23,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App, { includeGreetings: true })
